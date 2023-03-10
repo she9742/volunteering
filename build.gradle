@@ -54,8 +54,8 @@ dependencies {
 
     implementation group: 'org.json', name: 'json', version: '20220924'
 
-//    //Redisson
-//    implementation 'org.redisson:redisson-spring-boot-starter:3.16.3'
+    //Redisson
+    implementation 'org.redisson:redisson-spring-boot-starter:3.16.3'
 }
 
 
