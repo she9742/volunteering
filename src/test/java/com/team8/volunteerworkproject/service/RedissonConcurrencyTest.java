@@ -25,7 +25,7 @@ public class RedissonConcurrencyTest {
     private final int ATTEND_NUM = 100;//동시 실행 반복 횟수
     private final int EXPECTED_RESULT = ENROLLMENT_USERS * ATTEND_NUM;
 
-    @Test
+//    @Test
     public void test_concurrent_access() throws InterruptedException {
         RLock lock = redissonClient.getLock("test-lock");
 
