@@ -74,6 +74,6 @@ public class WebSecurityConfig implements WebMvcConfigurer {
     registry.addMapping("/**")
         .exposedHeaders("Authorization")
         .allowedMethods(ALLOWED_METHOD_NAMES.split(","))
-            .allowedOrigins("http://3.37.133.124");
+            .allowedOrigins("https://volunteering.store","http://volunteering.store");
   }
 }
