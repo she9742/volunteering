@@ -1,6 +1,7 @@
 package com.team8.volunteerworkproject.entity;
 
 import com.team8.volunteerworkproject.dto.request.ProfileRequestDto;
+import com.team8.volunteerworkproject.enums.PostStatus;
 import com.team8.volunteerworkproject.enums.UserRoleEnum;
 import com.team8.volunteerworkproject.enums.UserStatus;
 import jakarta.persistence.Column;
@@ -33,6 +34,7 @@ public class Profile extends Timestamp{
   @Enumerated(value = EnumType.STRING)
   private UserRoleEnum userRoleEnum;
 
+
   public Profile(String userId, String phoneNumber, String nickname, String interestArea,
                  String image, UserRoleEnum role) {
     this.userId = userId;
@@ -55,6 +57,7 @@ public class Profile extends Timestamp{
     this.nickname = nickname;
     this.image = image;
     this.userRoleEnum = userRoleEnum;
+
   }
 
 

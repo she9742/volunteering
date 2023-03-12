@@ -50,7 +50,7 @@ public class UserServiceImpl implements UserService {
     }
     if (requestDto.getCompanyRegisterNumb() != null) {
       Optional<User> found2 = userRepository.findByCompanyRegisterNumb(
-          requestDto.getCompanyRegisterNumb());
+              requestDto.getCompanyRegisterNumb());
       if (found2.isPresent()) {
         throw new IllegalArgumentException("중복된 사업자등록번호가 존재합니다.");
       }
@@ -66,7 +66,7 @@ public class UserServiceImpl implements UserService {
   @Override
   public AuthenticatedUserInfoDto signin(SigninRequestDto requestDto) {
     User user = userRepository.findByUserId(requestDto.getUserId()).orElseThrow(
-        () -> new IllegalArgumentException("등록된 아이디가 없습니다.")
+            () -> new IllegalArgumentException("등록된 아이디가 없습니다.")
     );
     if (!passwordEncoder.matches(requestDto.getPassword(), user.getPassword())) {
       throw new IllegalArgumentException("비밀번호가 일치하지 않습니다.");
@@ -81,7 +81,7 @@ public class UserServiceImpl implements UserService {
   @Override
   public void unregister(String userId, PwcheckRequestDto requestDto) {
     User user = userRepository.findByUserId(userId).orElseThrow(
-        () -> new IllegalArgumentException("등록된 아이디가 없습니다.")
+            () -> new IllegalArgumentException("등록된 아이디가 없습니다.")
     );
     if (!passwordEncoder.matches(requestDto.getPassword(), user.getPassword())) {
       throw new IllegalArgumentException("비밀번호가 일치하지 않습니다.");
