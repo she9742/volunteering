@@ -18,7 +18,7 @@ public interface ChallengeAuthCommentService {
     ChallengeAuthCommentResponseDto updateAuthComment( Long challengeAuthId, ChallengeAuthCommentRequestDto requestDto, UserDetailsImpl userDetails,@PathVariable Long challengeAuthCommentId);
 
     //삭제
-    String deleteAuthComment(@PathVariable Long challengeAuthId, @AuthenticationPrincipal UserDetailsImpl userDetails, @PathVariable Long challengeAuthCommentId);
+    String deleteAuthComment(Long challengeAuthId, UserDetailsImpl userDetails, Long challengeAuthCommentId);
 
     //게시글의 댓글 조회
     List<ChallengeAuthCommentResponseDto> getChallengeAuthComment( Long challengeAuthId);
