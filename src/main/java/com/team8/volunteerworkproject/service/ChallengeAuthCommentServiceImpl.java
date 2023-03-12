@@ -20,14 +20,14 @@ import java.util.List;
 public class ChallengeAuthCommentServiceImpl implements ChallengeAuthCommentService{
 
     private final ChallengeAuthCommentRepository challengeAuthCommentRepository;
-    private ChallengeAuthRepository challengeAuthRepository;
+    private final ChallengeAuthRepository challengeAuthRepository;
 
 
     //작성
     @Override
     public ChallengeAuthCommentResponseDto createAuthComment(Long challengeAuthId, ChallengeAuthCommentRequestDto requestDto, UserDetailsImpl userDetails) {
 
-        ChallengeAuth challengeAuth = challengeAuthRepository.findByChallengeAuthId(challengeAuthId).orElseThrow(
+        ChallengeAuth challengeAuth = challengeAuthRepository.findById(challengeAuthId).orElseThrow(
                 ()-> new IllegalArgumentException("해당 게시글이 없습니다.")
         );
 

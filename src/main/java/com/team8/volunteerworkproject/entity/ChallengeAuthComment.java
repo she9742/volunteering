@@ -17,13 +17,13 @@ public class ChallengeAuthComment extends Timestamp{
     @Column(nullable = false)
     private String challengeAuthComment;
 
-    @Column(nullable = false)
+//    @Column(nullable = false)
     private String nickname;
 
-    @Column(nullable = false)
+//    @Column(nullable = false)
     private String userId;
 
-    @Column(nullable = false)
+//    @Column(nullable = false)
     private Long challengeAuthId;
 
 

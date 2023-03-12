@@ -66,7 +66,7 @@ public class ChallengeAuthServiceImpl implements ChallengeAuthService {
   @Override
   @Transactional(readOnly = true)
   public ChallengeAuthResponseDto getCahllengeAuth(Long challengeAuthId) {
-    ChallengeAuth challengeAuth = challengeAuthRepository.findByChallengeAuthId(challengeAuthId)
+    ChallengeAuth challengeAuth = challengeAuthRepository.findById(challengeAuthId)
         .orElseThrow(
             () -> new IllegalArgumentException("찾으시는 챌린지 인증글이 없습니다.")
         );
