@@ -17,6 +17,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.web.multipart.MultipartFile;
 
 @Service
@@ -68,11 +70,8 @@ public class ChallengeAuthServiceImpl implements ChallengeAuthService {
         .orElseThrow(
             () -> new IllegalArgumentException("찾으시는 챌린지 인증글이 없습니다.")
         );
-    List<ChallengeAuthComment> comments = challengeAuthCommentRepository.findAllByChallengeAuth(
-        challengeAuth);
     int likeNum = challengeAuthLikeService.count(challengeAuthId);
-    ChallengeAuthResponseDto responseDto = new ChallengeAuthResponseDto(challengeAuth, likeNum,
-        comments);
+    ChallengeAuthResponseDto responseDto = new ChallengeAuthResponseDto(challengeAuth, likeNum);
     return responseDto;
   }
 

@@ -12,27 +12,29 @@ public class ChallengeAuthComment extends Timestamp{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long ChallengeAuthCommentId;
-
-    @ManyToOne
-    @JoinColumn(name = "challenge_auth_id")
-    private ChallengeAuth challengeAuth;
+    private Long challengeAuthCommentId;
 
     @Column(nullable = false)
-    private String comment;
+    private String challengeAuthComment;
+
+    @Column(nullable = false)
+    private String nickname;
 
     @Column(nullable = false)
     private String userId;
 
+    @Column(nullable = false)
+    private Long challengeAuthId;
 
 
-    public ChallengeAuthComment(ChallengeAuth challengeAuth, String comment) {
-        this.comment = comment;
-        this.userId = challengeAuth.getUserId();
-        this.challengeAuth = challengeAuth;
+    public ChallengeAuthComment(String challengeAuthComment, String userId, String nickname, Long challengeAuthId) {
+        this.challengeAuthComment = challengeAuthComment;
+        this.nickname = nickname;
+        this.userId = userId;
+        this.challengeAuthId = challengeAuthId;
     }
 
     public void updateChallengeAuthComment(ChallengeAuthCommentRequestDto requestDto) {
-        this.comment = requestDto.getComment();
+        this.challengeAuthComment = requestDto.getComment();
     }
 }

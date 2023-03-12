@@ -26,14 +26,17 @@ public class ChallengeAuthResponseDto {
 
     }
 
-    public ChallengeAuthResponseDto(ChallengeAuth challengeAuth, int likeNum, List<ChallengeAuthComment> comments) {
+    public ChallengeAuthResponseDto(ChallengeAuth challengeAuth, int likeNum) {
         this.challengeAuthId = challengeAuth.getChallengeAuthId();
         this.title = challengeAuth.getTitle();
         this.content = challengeAuth.getContent();
         this.image = challengeAuth.getImage();
-        for(ChallengeAuthComment comment : comments){
-            this.commentList.add(comment);
-        }
+//        for(ChallengeAuthComment comment : comments){
+//            this.commentList.add(comment);
+//        }
         this.likeNum = likeNum;
     }
+
+
+
 }

@@ -5,11 +5,14 @@ import com.team8.volunteerworkproject.entity.ChallengeAuthComment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface ChallengeAuthCommentRepository extends JpaRepository<ChallengeAuthComment, Long> {
 
-    List<ChallengeAuthComment> findAllByChallengeAuth(ChallengeAuth challengeAuth);
+    Optional<ChallengeAuthComment> findByChallengeAuthCommentId(Long challengeAuthCommentId);
+    Optional<List<ChallengeAuthComment>> findByChallengeAuthId(Long challengeAuthId);
+
+//    List<ChallengeAuthComment> findAllByChallengeAuthId(ChallengeAuth challengeAuthId);
 }
