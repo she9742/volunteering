@@ -58,7 +58,7 @@ public class UserServiceImpl implements UserService {
     }
 
     User user = new User(userId, password, nickname, role, companyRegisterNumb);
-    Profile profile = new Profile(userId, nickname, CLOUD_FRONT_DOMAIN_NAME+basicProfileImage);
+    Profile profile = new Profile(userId, nickname, CLOUD_FRONT_DOMAIN_NAME+basicProfileImage, role);
     userRepository.save(user);
     profileRepository.save(profile);
   }
